@@ -5,6 +5,32 @@
   list-style: none;
 }
 
-body{
-  background-color: #ffffff;
+body {
+  background-color: var(--bg-color);
+  font-family: var(--font-sans);
+  color: var(--text-body);
+  padding: 20px;
+  line-height: 1.5;
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 80px;
+}
+
+.footer-basique {
+  position: absolute; /* Se positionne par rapport au body */
+  bottom: 0; /* Le pousse tout en bas du body */
+  left: 0; /* L'aligne à gauche */
+  width: 100%; /* Prend toute la largeur */
+
+  /* Tes styles d'origine */
+  text-align: center;
+  padding: 20px 10px;
+  background-color: #333;
+  color: #fff;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+}
+
+.footer-basique p {
+  margin: 0;
 }
