@@ -3,9 +3,213 @@
   padding: 0;
   text-decoration: none;
   list-style: none;
+  box-sizing: border-box;
+}
+
+:root {
+  --font-display: "Georgia", Georgia, serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --bg-color: #faf6ed;
+  --text-dark: #2a221b;
+  --text-body: #4a4036;
+  --accent-gold: #c48a45;
+  --meta-color: #9c836a;
+  --card-bg: #ffffff;
+  --card-border: #e8dece;
+  --btn-color: #728091;
+
+  --radius-card: 16px;
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Inter", sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  font-family: var(--font-sans);
+  color: var(--text-body);
 }
 
 .title {
-  margin-top: 40px;
-  margin-left: 30px;
+  margin-top: 20px;
+  margin-left: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.title p {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--accent-gold);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.title h3 {
+  font-size: 28px;
+  font-weight: 700;
+  font-family: var(--font-serif);
+  color: var(--text-dark);
+}
+
+.filtres {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  margin-top: 15px;
+  margin-left: 15px;
+}
+
+.btn-filtre {
+  padding: 8px 18px;
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  background-color: transparent;
+  color: var(--text-body);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-filtre:hover {
+  background-color: var(--card-border);
+  color: var(--text-dark);
+}
+
+.btn-filtre.actif {
+  background-color: var(--text-dark);
+  color: var(--card-bg);
+  border-color: var(--text-dark);
+}
+
+.galerie-ruche {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 15px;
+}
+
+.ligne-hexa {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.ligne-hexa:not(:first-child) {
+  margin-top: -25px;
+}
+
+.hexa {
+  width: 100px;
+  height: 115px;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  background-color: var(--card-bg);
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.hexa img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hexa:hover {
+  transform: scale(1.05);
+  z-index: 10;
+}
+
+.hexa.masque {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .title,
+  .filtres {
+    margin-left: 30px;
+  }
+
+  .title {
+    margin-top: 30px;
+  }
+
+  .title p {
+    font-size: 14px;
+  }
+
+  .title h3 {
+    font-size: 42px;
+  }
+
+  .filtres {
+    gap: 15px;
+  }
+
+  .btn-filtre {
+    font-size: 16px;
+    padding: 10px 22px;
+  }
+
+  .galerie-ruche {
+    padding: 30px;
+  }
+
+  .ligne-hexa {
+    gap: 8px;
+  }
+
+  .ligne-hexa:not(:first-child) {
+    margin-top: -38px;
+  }
+
+  .hexa {
+    width: 150px;
+    height: 172px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .title {
+    margin-top: 40px;
+  }
+
+  .title p {
+    font-size: 16px;
+    letter-spacing: 2px;
+  }
+
+  .title h3 {
+    font-size: 56px;
+  }
+
+  .filtres {
+    gap: 20px;
+  }
+
+  .btn-filtre {
+    font-size: 18px;
+    padding: 12px 26px;
+  }
+
+  .galerie-ruche {
+    padding: 40px;
+  }
+
+  .ligne-hexa {
+    gap: 10px;
+  }
+
+  .ligne-hexa:not(:first-child) {
+    margin-top: -50px;
+  }
+
+  .hexa {
+    width: 200px;
+    height: 230px;
+  }
 }
