@@ -15,9 +15,14 @@
 }
 
 body {
-  background-color: var(--actualites-bg);
-  color: var(--actualites-text);
-  font-family: var(--actualites-sans);
+  background-color: var(--bg-color);
+  font-family: var(--font-sans);
+  color: var(--text-body);
+  padding: 20px;
+  line-height: 1.5;
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 80px;
 }
 
 .actualites-page {
@@ -204,7 +209,6 @@ body {
     flex-direction: column;
     justify-content: center;
   }
-<<<<<<< HEAD
 }
 main,
 body > h2,
@@ -212,17 +216,6 @@ body > h4,
 body > p,
 body > br {
   display: block;
-}
-
-body {
-  background-color: var(--bg-color);
-  font-family: var(--font-sans);
-  color: var(--text-body);
-  padding: 20px;
-  line-height: 1.5;
-  min-height: 100vh;
-  position: relative;
-  padding-bottom: 80px;
 }
 
 .footer-basique {
@@ -308,6 +301,3 @@ body {
   padding-bottom: 0.75rem;
   border-bottom: 2px solid #c8860a;
 }
-=======
-}
->>>>>>> 7c3183bf68ccb3102d6efc1c9b066ee9202b32c3
