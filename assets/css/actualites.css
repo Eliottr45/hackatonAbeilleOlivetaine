@@ -204,6 +204,7 @@ body {
     flex-direction: column;
     justify-content: center;
   }
+<<<<<<< HEAD
 }
 main,
 body > h2,
@@ -307,3 +308,6 @@ body {
   padding-bottom: 0.75rem;
   border-bottom: 2px solid #c8860a;
 }
+=======
+}
+>>>>>>> 7c3183bf68ccb3102d6efc1c9b066ee9202b32c3
