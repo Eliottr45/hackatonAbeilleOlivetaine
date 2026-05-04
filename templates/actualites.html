@@ -1,65 +1,186 @@
 <!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Actualités</title>
-  <link rel="stylesheet" href="../assets/css/header.css">
-  <link rel="stylesheet" href="../assets/css/actualites.css">
-
-
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Actualités</title>
+    <link rel="stylesheet" href="../assets/css/header.css">
+    <link rel="stylesheet" href="../assets/css/actualites.css">
 </head>
 <body>
+
 <section class="header">
+    <header class="site-header">
+        <div class="header-brand">
+            <div class="header-logo">⬡</div>
+            <div class="header-title">
+                <h1>L'Abeille Olivetaine</h1>
+                <p>Association<br>D'apiculteurs</p>
+            </div>
+        </div>
+        <button class="burger-button" id="burgerButton" aria-label="Ouvrir le menu">☰</button>
+    </header>
 
-<header class="site-header">
-  <div class="header-brand">
-    <div class="header-logo">⬡</div>
+    <div class="menu-overlay" id="menuOverlay"></div>
 
-    <div class="header-title">
-      <h1>L'Abeille Olivetaine</h1>
-      <p>Association<br>D'apiculteurs</p>
-    </div>
-  </div>
+    <nav class="burger-menu" id="burgerMenu">
+        <div class="menu-top">
+            <div class="menu-logo">
+                <div class="header-logo">⬡</div>
+                <div class="header-title">
+                    <h1>L'Abeille Olivetaine</h1>
+                    <p>Association<br>d'apiculteurs</p>
+                </div>
+            </div>
+            <button class="close-button" id="closeButton" aria-label="Fermer le menu">×</button>
+        </div>
 
-  <button class="burger-button" id="burgerButton" aria-label="Ouvrir le menu">
-    ☰
-  </button>
-</header>
+        <div class="header_line"></div>
 
-<div class="menu-overlay" id="menuOverlay"></div>
-
-<nav class="burger-menu" id="burgerMenu">
-  <div class="menu-top">
-    <div class="menu-logo">
-      <div class="header-logo">⬡</div>
-
-      <div class="header-title">
-        <h1>L'Abeille Olivetaine</h1>
-        <p>Association<br>d'apiculteurs</p>
-      </div>
-    </div>
-
-    <button class="close-button" id="closeButton" aria-label="Fermer le menu">
-      ×
-    </button>
-  </div>
-
-  <div class="header_line"></div>
-
-  <ul class="menu-links">
-    <li><a class="active" href="accueil.html">Accueil</a></li>
-    <li><a href="actualites.html">Actualités</a></li>
-    <li><a href="photovideo.html">Photos & Vidéos</a></li>
-    <li><a href="recettes.html">Recettes</a></li>
-    <li><a href="formations.html">Formations</a></li>
-    <li><a href="#">Connexion</a></li>
-  </ul>
-</nav>
+        <ul class="menu-links">
+            <li><a href="accueil.html">Accueil</a></li>
+            <li><a class="active" href="actualites.html">Actualités</a></li>
+            <li><a href="photovideo.html">Photos & Vidéos</a></li>
+            <li><a href="recettes.html">Recettes</a></li>
+            <li><a href="formations.html">Formations</a></li>
+            <li><a href="#">Connexion</a></li>
+        </ul>
+    </nav>
 </section>
 
-<h2>Décret n°2025-1377 du 29 Décembre 2025 précisant les modalités d'adoption du plan national et des plans départementaux de lutte contre frelon le frelon asiatique à pattes jaunes</h2>
+<main class="actualites-page">
+    <section class="actualites-hero">
+        <p class="actualites-kicker">Le journal de la ruche</p>
+        <h1>Nouveautés</h1>
+        <p class="actualites-intro">
+            Retrouvez les dernières informations de l’association, les événements à venir
+            et les documents utiles pour les apiculteurs.
+        </p>
+    </section>
+
+    <section class="news-grid">
+        <article class="news-card news-card-featured">
+            <div class="news-image">
+                <img src="../assets/img/miel.jpg" alt="Apiculteur travaillant sur une ruche">
+            </div>
+
+            <div class="news-content">
+                <div class="news-meta">
+                    <span class="news-badge">Événement</span>
+                    <span class="news-date">28 avril 2026</span>
+                </div>
+
+                <h2>Festival du miel — édition 2026</h2>
+
+                <p>
+                    Trois jours de dégustations, démonstrations et rencontres avec les
+                    producteurs de la région.
+                </p>
+
+                <a href="#" class="news-link">Découvrir l’événement</a>
+            </div>
+        </article>
+
+        <article class="news-card">
+            <div class="news-content">
+                <div class="news-meta">
+                    <span class="news-badge">Réglementation</span>
+                    <span class="news-date">29 décembre 2025</span>
+                </div>
+
+                <h2>Plan national de lutte contre le frelon asiatique</h2>
+
+                <p>
+                    Décret précisant les modalités d’adoption du plan national et des plans
+                    départementaux.
+                </p>
+
+                <a href="https://www.legifrance.gouv.fr/download/pdf?id=gwVEG1YigEmEk7G8bNpQh66LX11H3o62r_82R6Ql5Bg=" target="_blank" class="news-link">
+                    Consulter le document
+                </a>
+            </div>
+        </article>
+
+        <article class="news-card">
+            <div class="news-content">
+                <div class="news-meta">
+                    <span class="news-badge">Info</span>
+                    <span class="news-date">14 mars 2025</span>
+                </div>
+
+                <h2>Lutte contre la prolifération du frelon asiatique</h2>
+
+                <p>
+                    Une loi visant à préserver la filière agricole et à mieux encadrer la
+                    lutte contre le frelon asiatique.
+                </p>
+
+                <a href="https://www.legifrance.gouv.fr/download/pdf?id=yFHk8BqGhhVbGD-csP_674iX_erjixoTD_Jy3AVXRFk=" target="_blank" class="news-link">
+                    Lire la loi
+                </a>
+            </div>
+        </article>
+
+        <article class="news-card">
+            <div class="news-content">
+                <div class="news-meta">
+                    <span class="news-badge">Prévention</span>
+                    <span class="news-date">Été 2025</span>
+                </div>
+
+                <h2>Quelques précautions pour la saison chaude</h2>
+
+                <p>
+                    Conseils et bonnes pratiques pour protéger les ruchers pendant les
+                    périodes de fortes chaleurs.
+                </p>
+
+                <a href="https://s3-eu-west-1.amazonaws.com/buypacker-prod/coldstorage/Platform_33C4MWSFNAS6K5TZXQBPN2Y000/Nonprofit_01GGSRPJ5QGSQ6RM5XEMK4A4CM/Organization_01GGSRPJ67R0QTF0E77KWX68PN/document/5860333.pdf?response-content-disposition=attachment%3B%20filename%2A%3DUTF-8%27%2720250623%2520Pr%25C3%25A9cautions%2520feux.pdf&response-x-robots-tag=noindex&AWSAccessKeyId=AKIAV4T67WN6ENNI5OX6&Expires=1801785600&Signature=rHA36qp2gzSYxqoi0M6X8pGizvo%3D" target="_blank" class="news-link">
+                    Télécharger le PDF
+                </a>
+            </div>
+        </article>
+
+        <article class="news-card">
+            <div class="news-content">
+                <div class="news-meta">
+                    <span class="news-badge">Guide</span>
+                    <span class="news-date">Document</span>
+                </div>
+
+                <h2>Le livret de l’apiculteur</h2>
+
+                <p>
+                    Un livret destiné aux nouveaux apiculteurs et à celles et ceux qui
+                    souhaitent mettre leurs connaissances à jour.
+                </p>
+
+                <a href="https://s3-eu-west-1.amazonaws.com/buypacker-prod/coldstorage/Platform_33C4MWSFNAS6K5TZXQBPN2Y000/Nonprofit_01GGSRPJ5QGSQ6RM5XEMK4A4CM/Organization_01GGSRPJ67R0QTF0E77KWX68PN/document/5160490.pdf?response-content-disposition=attachment%3B%20filename%2A%3DUTF-8%27%27Le%2520livret%2520de%2520l%2527apiculteur.pdf&response-x-robots-tag=noindex&AWSAccessKeyId=AKIAV4T67WN6ENNI5OX6&Expires=1801785600&Signature=O%2FdZnnKPA1DSKmUk3IXkAxLCbTg%3D" target="_blank" class="news-link">
+                    Télécharger le livret
+                </a>
+            </div>
+        </article>
+
+        <article class="news-card">
+            <div class="news-content">
+                <div class="news-meta">
+                    <span class="news-badge">Article</span>
+                    <span class="news-date">2024</span>
+                </div>
+
+                <h2>Les ruches cheminées dans les Jardins du Loiret</h2>
+
+                <p>
+                    Un article consacré aux ruches cheminées, publié dans la revue
+                    “Les Jardins du Loiret”.
+                </p>
+
+                <a href="https://s3-eu-west-1.amazonaws.com/buypacker-prod/coldstorage/Platform_33C4MWSFNAS6K5TZXQBPN2Y000/Nonprofit_01GGSRPJ5QGSQ6RM5XEMK4A4CM/Organization_01GGSRPJ67R0QTF0E77KWX68PN/document/5160478.pdf?response-content-disposition=attachment%3B%20filename%2A%3DUTF-8%27%27Ruche%2520chemin%25C3%25A9e%2520Jardins%2520du%2520Loiret%25202024.pdf&response-x-robots-tag=noindex&AWSAccessKeyId=AKIAV4T67WN6ENNI5OX6&Expires=1801785600&Signature=JcP%2FSnrE9A0Dz7bE2dIfApdwqIY%3D" target="_blank" class="news-link">
+                    Lire l’article
+                </a>
+            </div>
+        </article>
+    </section>
+</main>
 
 <script src="../assets/script/menu.js"></script>
-</body>
-</html>
