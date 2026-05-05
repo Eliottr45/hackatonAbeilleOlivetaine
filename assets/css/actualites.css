@@ -1,14 +1,17 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap");
 
 :root {
   --bg-color: #faf6ed;
-  --text-dark: #2a221b;
-  --text-body: #4a4036;
-  --accent-gold: #c48a45;
-  --meta-color: #9c836a;
   --card-bg: #ffffff;
-  --card-border: #e8dece;
-  --btn-color: #728091;
+
+  --text-dark: #221a11;
+  --text-body: #40362b;
+
+  --accent-gold: #9c6727;
+  --meta-color: #69533c;
+
+  --card-border: #d4c0a1;
+  --btn-color: #435161;
 
   --radius-card: 16px;
   --font-serif: "Playfair Display", serif;
@@ -68,7 +71,7 @@ body {
   background-color: var(--card-bg);
   border: 1px solid var(--card-border);
   border-radius: var(--radius-card);
-  box-shadow: 0 18px 45px rgba(42, 34, 27, 0.08);
+  box-shadow: 0 18px 45px rgba(34, 26, 17, 0.08);
 }
 
 .news-image {
@@ -102,7 +105,7 @@ body {
   min-height: 28px;
   padding: 6px 12px;
   border-radius: 999px;
-  background-color: color-mix(in srgb, var(--accent-gold) 18%, white);
+  background-color: #f1dfc6;
   color: var(--accent-gold);
   font-size: 0.72rem;
   font-weight: 800;
@@ -114,7 +117,7 @@ body {
   position: relative;
   color: var(--meta-color);
   font-size: 0.82rem;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .news-date::before {

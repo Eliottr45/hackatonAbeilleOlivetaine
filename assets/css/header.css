@@ -1,14 +1,17 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap");
 
 :root {
     --bg-color: #faf6ed;
-    --text-dark: #2a221b;
-    --text-body: #4a4036;
-    --accent-gold: #c48a45;
-    --meta-color: #9c836a;
     --card-bg: #ffffff;
-    --card-border: #e8dece;
-    --btn-color: #728091;
+
+    --text-dark: #221a11;
+    --text-body: #40362b;
+
+    --accent-gold: #9c6727;
+    --meta-color: #69533c;
+
+    --card-border: #d4c0a1;
+    --btn-color: #435161;
 
     --radius-card: 16px;
     --font-serif: "Playfair Display", serif;
@@ -68,9 +71,9 @@ body {
     align-items: center;
     justify-content: center;
 
-    color: var(--text-dark);
+    color: var(--bg-color);
     font-size: 17px;
-    font-weight: bold;
+    font-weight: 800;
 }
 
 .header-title {
@@ -82,6 +85,7 @@ body {
     color: var(--text-dark);
     line-height: 1;
     font-family: var(--font-serif);
+    font-weight: 800;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -94,6 +98,7 @@ body {
     line-height: 1.1;
     text-transform: uppercase;
     letter-spacing: clamp(1.5px, 0.8vw, 3px);
+    font-weight: 700;
 }
 
 .burger-button {
@@ -157,7 +162,8 @@ body {
     font-size: clamp(1rem, 4.6vw, 1.25rem);
     color: var(--text-dark);
     line-height: 1;
-    font-family: var(--font-serif);
+    font-family: var(--font-sans);
+    font-weight: 800;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -169,6 +175,7 @@ body {
     text-transform: uppercase;
     letter-spacing: clamp(1.5px, 0.8vw, 3px);
     color: var(--accent-gold);
+    font-weight: 700;
 }
 
 .close-button {
@@ -202,6 +209,7 @@ body {
     color: var(--text-dark);
     font-size: 16px;
     font-family: var(--font-sans);
+    font-weight: 600;
 }
 
 .menu-links a.active {
@@ -225,7 +233,7 @@ body {
         padding: 18px 32px;
         border-radius: 30px;
         border: 1px solid var(--card-border);
-        box-shadow: 0 16px 40px rgba(42, 34, 27, 0.08);
+        box-shadow: 0 16px 40px rgba(34, 26, 17, 0.08);
     }
 
     .header-logo {
