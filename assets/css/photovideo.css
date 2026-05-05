@@ -149,11 +149,12 @@ footer {
 @media (min-width: 768px) {
   .title,
   .filtres {
-    margin-left: 30px;
+    margin-left: 40px;
   }
 
   .title {
     margin-top: 30px;
+    margin-left: 40px;
   }
 
   .title h3 {
@@ -170,6 +171,10 @@ footer {
 @media (min-width: 1024px) {
   .title {
     margin-top: 40px;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 40px;
   }
 
   .title p {
@@ -183,6 +188,10 @@ footer {
 
   .filtres {
     gap: 20px;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 40px;
   }
 
   .btn-filtre {
@@ -212,3 +221,13 @@ footer {
     grid-row: span 2;
   }
 }
+
+/* @media (min-width: 1550px) {
+  .title {
+    margin-left: 90px;
+  }
+
+  .filtres {
+    margin-left: 90px;
+  }
+} */
