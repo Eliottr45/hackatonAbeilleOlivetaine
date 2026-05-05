@@ -1,3 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap");
+
+:root {
+  --bg-color: #faf6ed;
+  --card-bg: #ffffff;
+
+  --text-dark: #221a11;
+  --text-body: #40362b;
+
+  --accent-gold: #9c6727;
+  --meta-color: #69533c;
+
+  --card-border: #d4c0a1;
+  --btn-color: #435161;
+
+  --radius-card: 16px;
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Inter", sans-serif;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -7,15 +27,9 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
-  background-color: var(--bg-color);
   font-family: var(--font-sans);
+  background-color: var(--bg-color);
   color: var(--text-body);
-  padding: 20px;
-  line-height: 1.5;
-  min-height: 100vh;
-  position: relative;
-  padding-bottom: 80px;
 }
 
 .header {
@@ -28,9 +42,9 @@ body {
   min-height: 84px;
   margin: 0 auto;
   padding: 14px 22px;
-  background-color: #fdf8ea;
+  background-color: var(--bg-color);
   border-radius: 28px 28px 0 0;
-  border-bottom: 1px solid #e6dfc6;
+  border-bottom: 1px solid var(--card-border);
 
   display: flex;
   align-items: center;
@@ -49,17 +63,17 @@ body {
   width: 34px;
   height: 34px;
   min-width: 34px;
-  background-color: #f5bf21;
-  border: 2px solid #3a2a18;
+  background-color: var(--accent-gold);
+  border: 2px solid var(--text-dark);
   border-radius: 50%;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  color: #3a2a18;
+  color: var(--bg-color);
   font-size: 17px;
-  font-weight: bold;
+  font-weight: 800;
 }
 
 .header-title {
@@ -68,9 +82,10 @@ body {
 
 .header-title h1 {
   font-size: clamp(1rem, 4.6vw, 1.25rem);
-  color: #2b2117;
+  color: var(--text-dark);
   line-height: 1;
-  font-family: Georgia, serif;
+  font-family: var(--font-serif);
+  font-weight: 800;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -78,11 +93,12 @@ body {
 
 .header-title p {
   margin-top: 5px;
-  color: #9c6b22;
+  color: var(--accent-gold);
   font-size: clamp(0.55rem, 2.6vw, 0.7rem);
   line-height: 1.1;
   text-transform: uppercase;
   letter-spacing: clamp(1.5px, 0.8vw, 3px);
+  font-weight: 700;
 }
 
 .burger-button {
@@ -91,13 +107,13 @@ body {
   background: none;
   border: none;
   cursor: pointer;
-  color: #3a2a18;
+  color: var(--text-dark);
 }
 
 .menu-overlay {
   position: fixed;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: rgba(42, 34, 27, 0.72);
   opacity: 0;
   visibility: hidden;
   transition: 0.3s ease;
@@ -115,7 +131,7 @@ body {
   left: 50%;
   width: min(100% - 32px, 390px);
   max-height: calc(100vh - 8px);
-  background-color: #fdf8ea;
+  background-color: var(--bg-color);
   border-radius: 28px 28px 0 0;
   z-index: 20;
   transform: translateX(-50%) translateY(-120%);
@@ -144,9 +160,10 @@ body {
 
 .menu-logo h1 {
   font-size: clamp(1rem, 4.6vw, 1.25rem);
-  color: #2b2117;
+  color: var(--text-dark);
   line-height: 1;
-  font-family: Georgia, serif;
+  font-family: var(--font-sans);
+  font-weight: 800;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -157,7 +174,8 @@ body {
   font-size: clamp(0.55rem, 2.6vw, 0.7rem);
   text-transform: uppercase;
   letter-spacing: clamp(1.5px, 0.8vw, 3px);
-  color: #9c6b22;
+  color: var(--accent-gold);
+  font-weight: 700;
 }
 
 .close-button {
@@ -167,13 +185,13 @@ body {
   background: none;
   border: none;
   cursor: pointer;
-  color: #2b2117;
+  color: var(--text-dark);
 }
 
 .header_line {
   height: 1px;
   width: 100%;
-  background-color: #e6dfc6;
+  background-color: var(--card-border);
 }
 
 .menu-links {
@@ -188,18 +206,20 @@ body {
   display: block;
   padding: 14px 16px;
   border-radius: 8px;
-  color: #2b2117;
+  color: var(--text-dark);
   font-size: 16px;
+  font-family: var(--font-sans);
+  font-weight: 600;
 }
 
 .menu-links a.active {
-  background-color: #3b2a18;
-  color: #fff7e6;
+  background-color: var(--text-dark);
+  color: var(--bg-color);
 }
 
 .menu-links a:hover {
-  background-color: #3b2a18;
-  color: #fff7e6;
+  background-color: var(--text-dark);
+  color: var(--bg-color);
 }
 
 @media screen and (min-width: 768px) {
@@ -212,8 +232,8 @@ body {
     min-height: 92px;
     padding: 18px 32px;
     border-radius: 30px;
-    border: 1px solid #e6dfc6;
-    box-shadow: 0 16px 40px rgba(59, 42, 24, 0.08);
+    border: 1px solid var(--card-border);
+    box-shadow: 0 16px 40px rgba(34, 26, 17, 0.08);
   }
 
   .header-logo {

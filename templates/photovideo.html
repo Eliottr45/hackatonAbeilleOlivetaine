@@ -1,61 +1,74 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Photos & Vidéos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="../assets/css/photovideo.css" />
-    <link rel="stylesheet" href="{% static 'css/accueil.css' %}" />
-
-    <title>Photos&Vidéos</title>
   </head>
   <body>
     <div class="title">
-      <p>GALERIE</p>
+      <p>Galerie</p>
       <h3>Photos & Vidéos</h3>
     </div>
 
     <div class="filtres">
       <button class="btn-filtre actif" data-filter="tous">Tous</button>
-      <button class="btn-filtre" data-filter="photo">Photos</button>
-      <button class="btn-filtre" data-filter="video">Vidéos</button>
+      <button class="btn-filtre" data-filter="album-2024">Album 2024</button>
+      <button class="btn-filtre" data-filter="album-2025">Album 2025</button>
     </div>
 
-    <div class="galerie-ruche">
-      <!-- Ligne 1 : 2 photos -->
-      <div class="ligne-hexa">
-        <div class="hexa">
-          <img src="https://picsum.photos/300/300?random=1.jpg" alt="1" />
-        </div>
-        <div class="hexa">
-          <img src="https://picsum.photos/300/300?random=2.jpg" alt="2" />
-        </div>
+    <div class="galerie-grid">
+      <!-- 1 tall à gauche + 2 normaux à droite qui remplissent les 2 lignes -->
+      <div class="galerie-item tall album-2024">
+        <img src="../assets/img/frelon_resultat.jpg" alt="Frelon" />
       </div>
 
-      <!-- Ligne 2 : 3 https://picsum.photos/300/300?random=s -->
-      <div class="ligne-hexa">
-        <div class="hexa">
-          <img src="https://picsum.photos/300/300?random=3.jpg" alt="3" />
-        </div>
-        <div class="hexa">
-          <img src="https://picsum.photos/300/300?random=4.jpg" alt="4" />
-        </div>
-        <div class="hexa">
-          <img src="https://picsum.photos/300/300?random=5.jpg" alt="5" />
-        </div>
+      <div class="galerie-item album-2025">
+        <img src="../assets/img/nid_resultat.jpg" alt="Nid" />
       </div>
 
-      <!-- Ligne 3 : 2 https://picsum.photos/300/300?random=s -->
-      <div class="ligne-hexa">
-        <div class="hexa">
-          <img src="https://picsum.photos/300/300?random=6.jpg" alt="6" />
-        </div>
-        <div class="hexa">
-          <img src="https://picsum.photos/300/300?random=7.jpg" alt="7" />
-        </div>
+      <div class="galerie-item album-2025">
+        <img src="../assets/img/nid_resultat.jpg" alt="Nid" />
+      </div>
+
+      <!-- Ligne suivante : wide + 2 normaux -->
+      <div class="galerie-item wide album-2024">
+        <img src="../assets/img/frelon_resultat.jpg" alt="Frelon" />
+      </div>
+
+      <div class="galerie-item album-2025">
+        <img src="../assets/img/nid_resultat.jpg" alt="Nid" />
+      </div>
+
+      <div class="galerie-item album-2024">
+        <img src="../assets/img/frelon_resultat.jpg" alt="Frelon" />
+      </div>
+
+      <!-- Ligne suivante : 4 normaux classiques -->
+      <div class="galerie-item album-2025">
+        <img src="../assets/img/nid_resultat.jpg" alt="Nid" />
+      </div>
+
+      <div class="galerie-item album-2024">
+        <img src="../assets/img/frelon_resultat.jpg" alt="Frelon" />
+      </div>
+
+      <div class="galerie-item album-2025">
+        <img src="../assets/img/nid_resultat.jpg" alt="Nid" />
+      </div>
+
+      <div class="galerie-item album-2024">
+        <img src="../assets/img/frelon_resultat.jpg" alt="Frelon" />
       </div>
     </div>
-    <footer class="footer-basique">
-      <p>&copy; 2026 Abeille Olivetaine. Tous droits réservés.</p>
-    </footer>
+
+    <script src="../assets/script/photovideo.js"></script>
   </body>
 </html>

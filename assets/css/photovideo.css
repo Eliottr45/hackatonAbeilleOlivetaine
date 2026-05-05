@@ -7,17 +7,12 @@
 }
 
 :root {
-  --font-display: "Georgia", Georgia, serif;
-  --font-sans: "Inter", system-ui, sans-serif;
   --bg-color: #faf6ed;
   --text-dark: #2a221b;
   --text-body: #4a4036;
   --accent-gold: #c48a45;
-  --meta-color: #9c836a;
   --card-bg: #ffffff;
   --card-border: #e8dece;
-  --btn-color: #728091;
-
   --radius-card: 16px;
   --font-serif: "Playfair Display", serif;
   --font-sans: "Inter", sans-serif;
@@ -27,8 +22,11 @@ body {
   background-color: var(--bg-color);
   font-family: var(--font-sans);
   color: var(--text-body);
+  min-height: 100vh;
+  padding-bottom: 80px;
 }
 
+/* ---- En-tête ---- */
 .title {
   margin-top: 20px;
   margin-left: 15px;
@@ -52,9 +50,10 @@ body {
   color: var(--text-dark);
 }
 
+/* ---- Boutons filtre ---- */
 .filtres {
   display: flex;
-  justify-content: flex-start;
+  flex-wrap: wrap;
   gap: 10px;
   margin-top: 15px;
   margin-left: 15px;
@@ -70,7 +69,7 @@ body {
   font-size: 14px;
   font-weight: 500;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.25s ease;
 }
 
 .btn-filtre:hover {
@@ -78,56 +77,81 @@ body {
   color: var(--text-dark);
 }
 
+/* Le bouton actif est en fond sombre */
 .btn-filtre.actif {
   background-color: var(--text-dark);
   color: var(--card-bg);
   border-color: var(--text-dark);
 }
 
-.galerie-ruche {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+/* ---- Grille galerie ---- */
+.galerie-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
   padding: 20px 15px;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
-.ligne-hexa {
-  display: flex;
-  justify-content: center;
-  gap: 5px;
-  flex-wrap: wrap;
-}
-
-.ligne-hexa:not(:first-child) {
-  margin-top: -25px;
-}
-
-.hexa {
-  width: 100px;
-  height: 115px;
-  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-  background-color: var(--card-bg);
-  overflow: hidden;
+.galerie-item {
   position: relative;
-  transition: transform 0.3s ease;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  background-color: var(--card-bg);
+  aspect-ratio: 1 / 1;
+  transition: opacity 0.3s ease;
 }
 
-.hexa img {
+.galerie-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform 0.4s ease;
 }
 
-.hexa:hover {
-  transform: scale(1.05);
-  z-index: 10;
+/* Placeholder affiché quand il n'y a pas encore d'image */
+.galerie-item .placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: 0.5px;
+  transition: transform 0.4s ease;
 }
 
-.hexa.masque {
+.galerie-item:hover img,
+.galerie-item:hover .placeholder {
+  transform: scale(1.04);
+}
+
+/* Les items masqués par le filtre disparaissent proprement */
+.galerie-item.masque {
   display: none;
 }
 
+/* ---- Footer ---- */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  padding: 16px 10px;
+  background-color: #2a221b;
+  color: #faf6ed;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+}
+
+/* ---- Tablette (min 768px) ---- */
 @media (min-width: 768px) {
   .title,
   .filtres {
@@ -138,41 +162,18 @@ body {
     margin-top: 30px;
   }
 
-  .title p {
-    font-size: 14px;
-  }
-
   .title h3 {
     font-size: 42px;
   }
 
-  .filtres {
+  .galerie-grid {
+    grid-template-columns: repeat(3, 1fr);
     gap: 15px;
-  }
-
-  .btn-filtre {
-    font-size: 16px;
-    padding: 10px 22px;
-  }
-
-  .galerie-ruche {
     padding: 30px;
-  }
-
-  .ligne-hexa {
-    gap: 8px;
-  }
-
-  .ligne-hexa:not(:first-child) {
-    margin-top: -38px;
-  }
-
-  .hexa {
-    width: 150px;
-    height: 172px;
   }
 }
 
+/* ---- Desktop (min 1024px) ---- */
 @media (min-width: 1024px) {
   .title {
     margin-top: 40px;
@@ -196,49 +197,27 @@ body {
     padding: 12px 26px;
   }
 
-  .galerie-ruche {
+  .galerie-grid {
+    grid-template-columns: repeat(4, 1fr);
+    /* minmax évite la déformation des images sur les grandes cartes */
+    grid-auto-rows: minmax(200px, 260px);
+    gap: 20px;
     padding: 40px;
   }
 
-  .ligne-hexa {
-    gap: 10px;
+  /* Sur desktop le ratio carré est désactivé, la hauteur vient des rows */
+  .galerie-item {
+    aspect-ratio: auto;
   }
 
-  .ligne-hexa:not(:first-child) {
-    margin-top: -50px;
+  .galerie-item.tall {
+    grid-row: span 2;
   }
-
-  .hexa {
-    width: 200px;
-    height: 230px;
+  .galerie-item.wide {
+    grid-column: span 2;
   }
-  body {
-    background-color: var(--bg-color);
-    font-family: var(--font-sans);
-    color: var(--text-body);
-    padding: 20px;
-    line-height: 1.5;
-    min-height: 100vh;
-    position: relative;
-    padding-bottom: 80px;
-  }
-
-  .footer-basique {
-    position: absolute; /* Se positionne par rapport au body */
-    bottom: 0; /* Le pousse tout en bas du body */
-    left: 0; /* L'aligne à gauche */
-    width: 100%; /* Prend toute la largeur */
-
-    /* Tes styles d'origine */
-    text-align: center;
-    padding: 20px 10px;
-    background-color: #333;
-    color: #fff;
-    font-family: var(--font-sans);
-    font-size: 0.9rem;
-  }
-
-  .footer-basique p {
-    margin: 0;
+  .galerie-item.large {
+    grid-column: span 2;
+    grid-row: span 2;
   }
 }
