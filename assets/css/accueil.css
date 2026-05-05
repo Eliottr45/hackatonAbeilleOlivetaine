@@ -1,17 +1,26 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap");
 
 :root {
+  /* Arrière-plans */
   --bg-color: #faf6ed;
-  --text-dark: #2a221b;
-  --text-body: #4a4036;
-  --accent-gold: #c48a45;
-  --meta-color: #9c836a;
   --card-bg: #ffffff;
-  --card-border: #e8dece;
-  --btn-color: #728091;
+
+  /* Couleurs de texte (assombries pour un meilleur contraste) */
+  --text-dark: #221a11;
+  --text-body: #40362b;
+
+  /* Accents et métadonnées (ajustés pour dépasser 4.5:1) */
+  --accent-gold: #9c6727;
+  --meta-color: #69533c;
+
+  /* Bordure et boutons */
+  --card-border: #d4c0a1;
+  --btn-color: #435161;
+
+  /* Design & Typographie */
   --radius-card: 16px;
-  --font-serif: "Playfair Display", serif;
   --font-sans: "Inter", sans-serif;
+  --font-serif: Georgia, serif;
 }
 
 * {
@@ -25,7 +34,6 @@ body {
   background-color: var(--bg-color);
   font-family: var(--font-sans);
   color: var(--text-body);
-  padding: 20px;
   line-height: 1.5;
   min-height: 100vh;
   position: relative;
@@ -130,7 +138,7 @@ tbody th {
   font-size: 1.1rem;
 }
 
-a {
+.containerMain a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -138,7 +146,7 @@ a {
   color: var(--bg-color);
   text-decoration: none;
   padding: 0.8rem 1.8rem;
-  border-radius: 40px; /* Forme de pilule */
+  border-radius: 40px;
   font-weight: 500;
   font-size: 1rem;
   transition: all 0.3s ease;
@@ -146,7 +154,7 @@ a {
   margin: 0.5rem 0 1.5rem 0;
 }
 
-a:hover {
+.containerMain a:hover {
   background-color: var(--accent-gold);
   transform: translateY(-2px);
 }

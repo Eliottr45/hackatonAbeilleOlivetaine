@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../assets/css/recettes.css" />
+    <link rel="stylesheet" href="../assets/css/header.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -14,6 +15,56 @@
     <title>Document</title>
   </head>
   <body>
+    <section class="header">
+      <header class="site-header">
+        <div class="header-brand">
+          <div class="header-logo">⬡</div>
+          <div class="header-title">
+            <h1>L'Abeille Olivetaine</h1>
+            <p>Association<br />D'apiculteurs</p>
+          </div>
+        </div>
+        <button
+          class="burger-button"
+          id="burgerButton"
+          aria-label="Ouvrir le menu"
+        >
+          ☰
+        </button>
+
+        <nav class="burger-menu" id="burgerMenu">
+          <div class="menu-top">
+            <div class="menu-logo">
+              <div class="header-logo">⬡</div>
+              <div class="header-title">
+                <h1>L'Abeille Olivetaine</h1>
+                <p>Association<br />d'apiculteurs</p>
+              </div>
+            </div>
+            <button
+              class="close-button"
+              id="closeButton"
+              aria-label="Fermer le menu"
+            >
+              ×
+            </button>
+          </div>
+
+          <div class="header_line"></div>
+
+          <ul class="menu-links">
+            <li><a href="accueil.html">Accueil</a></li>
+            <li><a class="active" href="actualites.html">Actualités</a></li>
+            <li><a href="photovideo.html">Photos & Vidéos</a></li>
+            <li><a href="recettes.html">Recettes</a></li>
+            <li><a href="formations.html">Formations</a></li>
+            <li><a href="#">Connexion</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <div class="menu-overlay" id="menuOverlay"></div>
+    </section>
     <section class="all-title">
       <h3 class="title-top">CARNET DE SAVEURS</h3>
       <h2>Recettes</h2>
@@ -107,7 +158,7 @@
         <span class="type-recette">RECETTES</span>
         <a href="">
           <img
-            src="../assets/img/pain-epices.jpg"
+            src="../assets/img/recettes.jpg"
             alt="Pâtisseries en forme de rose avec un pot de miel"
             class="card-img"
           />
@@ -136,5 +187,6 @@
     <footer class="footer-basique">
       <p>&copy; 2026 Abeille Olivetaine. Tous droits réservés.</p>
     </footer>
+    <script src="../assets/script/menu.js"></script>
   </body>
 </html>
