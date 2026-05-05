@@ -38,6 +38,9 @@ body {
   color: var(--text-body);
   padding: 20px;
   line-height: 1.5;
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 80px;
 }
 
 /* =========================================
@@ -229,4 +232,23 @@ body {
     /* 2 cartes par ligne sur tablette */
     width: calc(50% - 15px);
   }
+}
+
+.footer-basique {
+  position: absolute; /* Se positionne par rapport au body */
+  bottom: 0; /* Le pousse tout en bas du body */
+  left: 0; /* L'aligne à gauche */
+  width: 100%; /* Prend toute la largeur */
+
+  /* Tes styles d'origine */
+  text-align: center;
+  padding: 20px 10px;
+  background-color: #333;
+  color: #fff;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+}
+
+.footer-basique p {
+  margin: 0;
 }

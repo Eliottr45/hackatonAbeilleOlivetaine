@@ -1,24 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap");
 
 :root {
-  --bg-color: #faf6ed;
-  --text-dark: #2a221b;
-  --text-body: #4a4036;
-  --accent-gold: #c48a45;
-  --meta-color: #9c836a;
-  --card-bg: #ffffff;
-  --card-border: #e8dece;
-  --btn-color: #728091;
-
-  --radius-card: 16px;
-  --font-serif: "Playfair Display", serif;
-  --font-sans: "Inter", sans-serif;
+  --actualites-bg: #fdf8ea;
+  --actualites-card: #ffffff;
+  --actualites-text: #2b2117;
+  --actualites-muted: #625548;
+  --actualites-gold: #c58a2f;
+  --actualites-gold-light: #fff1bf;
+  --actualites-border: #eadfca;
+  --actualites-brown: #3b2a18;
+  --actualites-radius: 18px;
+  --actualites-serif: "Playfair Display", serif;
+  --actualites-sans: "Inter", sans-serif;
 }
 
 body {
-  background-color: var(--bg-color);
-  color: var(--text-dark);
-  font-family: var(--font-sans);
+  background-color: var(--actualites-bg);
+  color: var(--actualites-text);
+  font-family: var(--actualites-sans);
 }
 
 .actualites-page {
@@ -32,7 +31,7 @@ body {
 }
 
 .actualites-kicker {
-  color: var(--accent-gold);
+  color: var(--actualites-gold);
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.26em;
@@ -42,8 +41,8 @@ body {
 
 .actualites-hero h1 {
   margin-top: 4px;
-  color: var(--text-dark);
-  font-family: var(--font-serif);
+  color: var(--actualites-text);
+  font-family: var(--actualites-serif);
   font-size: clamp(3.2rem, 14vw, 4.6rem);
   font-weight: 800;
   line-height: 0.9;
@@ -53,7 +52,7 @@ body {
 .actualites-intro {
   margin-top: 18px;
   max-width: 310px;
-  color: var(--text-body);
+  color: var(--actualites-muted);
   font-size: 0.98rem;
   line-height: 1.55;
 }
@@ -102,8 +101,8 @@ body {
   min-height: 28px;
   padding: 6px 12px;
   border-radius: 999px;
-  background-color: color-mix(in srgb, var(--accent-gold) 18%, white);
-  color: var(--accent-gold);
+  background-color: var(--actualites-gold-light);
+  color: #8a5d16;
   font-size: 0.72rem;
   font-weight: 800;
   letter-spacing: 0.08em;
@@ -112,7 +111,7 @@ body {
 
 .news-date {
   position: relative;
-  color: var(--meta-color);
+  color: #8b7a68;
   font-size: 0.82rem;
   font-weight: 600;
 }
@@ -120,13 +119,13 @@ body {
 .news-date::before {
   content: "▣";
   margin-right: 7px;
-  color: var(--accent-gold);
+  color: var(--actualites-gold);
   font-size: 0.7rem;
 }
 
 .news-card h2 {
-  color: var(--text-dark);
-  font-family: var(--font-serif);
+  color: var(--actualites-text);
+  font-family: var(--actualites-serif);
   font-size: 1.75rem;
   font-weight: 800;
   line-height: 1.05;
@@ -135,7 +134,7 @@ body {
 
 .news-card p {
   margin-top: 18px;
-  color: var(--text-body);
+  color: var(--actualites-muted);
   font-size: 1rem;
   line-height: 1.55;
 }
@@ -145,7 +144,7 @@ body {
   align-items: center;
   gap: 8px;
   margin-top: 22px;
-  color: var(--btn-color);
+  color: var(--actualites-brown);
   font-size: 0.9rem;
   font-weight: 800;
   text-decoration: none;
@@ -161,7 +160,7 @@ body {
 }
 
 .news-card-featured {
-  border-radius: var(--radius-card);
+  border-radius: 20px;
 }
 
 @media screen and (min-width: 768px) {
