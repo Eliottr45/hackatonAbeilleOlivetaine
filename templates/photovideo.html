@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Adaptez les liens selon votre structure de projet -->
     <link rel="stylesheet" href="../assets/css/photovideo.css" />
     <link rel="stylesheet" href="{% static 'css/accueil.css' %}" />
+    <link rel="stylesheet" href="../assets/css/footer.css" />
 
     <title>Photos & Vidéos</title>
   </head>
@@ -21,9 +21,7 @@
       <button class="btn-filtre" data-filter="video">Vidéos</button>
     </div>
 
-    <!-- Nouvelle structure Grid façon Bento Box -->
     <div class="galerie-grid">
-      <!-- Image haute (prend 2 lignes) -->
       <div class="galerie-item tall">
         <img
           src="https://picsum.photos/600/800?random=1"
@@ -31,7 +29,6 @@
         />
       </div>
 
-      <!-- Images standards -->
       <div class="galerie-item">
         <img src="https://picsum.photos/400/400?random=2" alt="Cadre miel" />
       </div>
@@ -39,7 +36,6 @@
         <img src="https://picsum.photos/400/400?random=3" alt="Apiculteur" />
       </div>
 
-      <!-- Image large (prend 2 colonnes) -->
       <div class="galerie-item wide">
         <img
           src="https://picsum.photos/800/400?random=4"
@@ -47,7 +43,6 @@
         />
       </div>
 
-      <!-- Images standards -->
       <div class="galerie-item">
         <img src="https://picsum.photos/400/400?random=5" alt="Abeilles zoom" />
       </div>
