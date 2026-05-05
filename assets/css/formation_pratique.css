@@ -1,0 +1,189 @@
+:root {
+  /* Arrière-plans */
+  --bg-color: #faf6ed;
+  --card-bg: #ffffff;
+
+  /* Couleurs de texte (assombries pour un meilleur contraste) */
+  --text-dark: #221a11;
+  --text-body: #40362b;
+
+  /* Accents et métadonnées (ajustés pour dépasser 4.5:1) */
+  --accent-gold: #9c6727;
+  --meta-color: #69533c;
+
+  /* Bordure et boutons */
+  --card-border: #d4c0a1; 
+  --btn-color: #435161; 
+
+  /* Design & Typographie */
+  --radius-card: 16px; 
+  --font-sans: "Inter", sans-serif;
+  --font-serif: Georgia, serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+body {
+  background-color: var(--bg-color);
+  font-family: var(--font-sans);
+  color: var(--text-body);
+  padding: 2rem;
+  line-height: 1.6; /* Améliore la lisibilité globale */
+}
+
+main.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 4rem; /* Plus d'espace pour un design aéré */
+}
+
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 2rem;
+}
+
+.image-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 450px; /* Légèrement plus grand pour l'impact visuel */
+  object-fit: cover;
+  border-radius: var(--radius-card);
+  box-shadow: 0 10px 30px rgba(34, 26, 17, 0.15);
+}
+
+.overlay-badge {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: var(--accent-gold);
+  color: #ffffff;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.intro-text h1 {
+  font-family: var(--font-serif);
+  color: var(--text-dark);
+  font-size: 2.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.intro-text p {
+  font-size: 1.2rem;
+  color: var(--meta-color);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.grid-box {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  width: 100%;
+}
+
+.box-list-training {  
+  background-color: var(--card-bg);
+  border-radius: var(--radius-card);
+  border: 1px solid var(--card-border);
+  padding: 3rem 2rem 2.5rem; /* Plus de padding pour un effet "premium" */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Aligné à gauche pour la lecture */
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+  overflow: hidden; /* Pour contenir les éléments absolus */
+}
+
+.box-list-training:hover {
+  transform: translateY(-8px);
+  border-color: var(--accent-gold);
+  box-shadow: 0 15px 30px rgba(156, 103, 39, 0.12);
+}
+
+/* Le grand numéro d'étape en filigrane */
+.step-number {
+  font-family: var(--font-serif);
+  font-size: 5rem;
+  color: var(--card-border);
+  opacity: 0.3;
+  position: absolute;
+  top: -10px;
+  right: 15px;
+  font-weight: bold;
+  line-height: 1;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.box-list-training:hover .step-number {
+  opacity: 0.6;
+}
+
+.box-list-training h2 {
+  font-family: var(--font-serif);
+  color: var(--text-dark);
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+  padding-right: 2rem; /* Évite que le texte ne chevauche le numéro */
+  position: relative;
+  z-index: 1;
+}
+
+/* Séparateur élégant sous le titre */
+.box-list-training h2::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 3px;
+  background-color: var(--accent-gold);
+  margin-top: 1rem;
+  border-radius: 2px;
+}
+
+/* Style de la liste à puces */
+.box-list-training ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  z-index: 1; /* Pour passer au-dessus du chiffre en fond */
+}
+
+.box-list-training li {
+  color: var(--text-body);
+  font-size: 1rem;
+  font-weight: 400;
+  display: flex;
+  align-items: flex-start;
+}
+
+/* Puces personnalisées dorées */
+.box-list-training li::before {
+  content: '•';
+  color: var(--accent-gold);
+  font-size: 1.5rem;
+  line-height: 1rem;
+  margin-right: 0.6rem;
+  margin-top: 0.2rem;
+}
