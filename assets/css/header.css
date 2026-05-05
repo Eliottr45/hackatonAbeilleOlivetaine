@@ -1,290 +1,310 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap");
+
+:root {
+    --bg-color: #faf6ed;
+    --card-bg: #ffffff;
+
+    --text-dark: #221a11;
+    --text-body: #40362b;
+
+    --accent-gold: #9c6727;
+    --meta-color: #69533c;
+
+    --card-border: #d4c0a1;
+    --btn-color: #435161;
+
+    --radius-card: 16px;
+    --font-serif: "Playfair Display", serif;
+    --font-sans: "Inter", sans-serif;
+}
+
 * {
-  margin: 0;
-  padding: 0;
-  text-decoration: none;
-  list-style: none;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: Arial, sans-serif;
-  background-color: var(--bg-color);
-  font-family: var(--font-sans);
-  color: var(--text-body);
-  padding: 20px;
-  line-height: 1.5;
-  min-height: 100vh;
-  position: relative;
-  padding-bottom: 80px;
+    font-family: var(--font-sans);
+    background-color: var(--bg-color);
+    color: var(--text-body);
 }
 
 .header {
-  width: 100%;
-  padding: 4px 0 0;
+    width: 100%;
+    padding: 4px 0 0;
 }
 
 .site-header {
-  width: min(100% - 32px, 390px);
-  min-height: 84px;
-  margin: 0 auto;
-  padding: 14px 22px;
-  background-color: #fdf8ea;
-  border-radius: 28px 28px 0 0;
-  border-bottom: 1px solid #e6dfc6;
+    width: min(100% - 32px, 390px);
+    min-height: 84px;
+    margin: 0 auto;
+    padding: 14px 22px;
+    background-color: var(--bg-color);
+    border-radius: 28px 28px 0 0;
+    border-bottom: 1px solid var(--card-border);
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
 }
 
 .header-brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
 }
 
 .header-logo {
-  width: 34px;
-  height: 34px;
-  min-width: 34px;
-  background-color: #f5bf21;
-  border: 2px solid #3a2a18;
-  border-radius: 50%;
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+    background-color: var(--accent-gold);
+    border: 2px solid var(--text-dark);
+    border-radius: 50%;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-  color: #3a2a18;
-  font-size: 17px;
-  font-weight: bold;
+    color: var(--bg-color);
+    font-size: 17px;
+    font-weight: 800;
 }
 
 .header-title {
-  min-width: 0;
+    min-width: 0;
 }
 
 .header-title h1 {
-  font-size: clamp(1rem, 4.6vw, 1.25rem);
-  color: #2b2117;
-  line-height: 1;
-  font-family: Georgia, serif;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+    font-size: clamp(1rem, 4.6vw, 1.25rem);
+    color: var(--text-dark);
+    line-height: 1;
+    font-family: var(--font-serif);
+    font-weight: 800;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .header-title p {
-  margin-top: 5px;
-  color: #9c6b22;
-  font-size: clamp(0.55rem, 2.6vw, 0.7rem);
-  line-height: 1.1;
-  text-transform: uppercase;
-  letter-spacing: clamp(1.5px, 0.8vw, 3px);
+    margin-top: 5px;
+    color: var(--accent-gold);
+    font-size: clamp(0.55rem, 2.6vw, 0.7rem);
+    line-height: 1.1;
+    text-transform: uppercase;
+    letter-spacing: clamp(1.5px, 0.8vw, 3px);
+    font-weight: 700;
 }
 
 .burger-button {
-  min-width: 36px;
-  font-size: 28px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: #3a2a18;
+    min-width: 36px;
+    font-size: 28px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-dark);
 }
 
 .menu-overlay {
-  position: fixed;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.75);
-  opacity: 0;
-  visibility: hidden;
-  transition: 0.3s ease;
-  z-index: 10;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(42, 34, 27, 0.72);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s ease;
+    z-index: 10;
 }
 
 .menu-overlay.open {
-  opacity: 1;
-  visibility: visible;
+    opacity: 1;
+    visibility: visible;
 }
 
 .burger-menu {
-  position: fixed;
-  top: 4px;
-  left: 50%;
-  width: min(100% - 32px, 390px);
-  max-height: calc(100vh - 8px);
-  background-color: #fdf8ea;
-  border-radius: 28px 28px 0 0;
-  z-index: 20;
-  transform: translateX(-50%) translateY(-120%);
-  transition: transform 0.3s ease;
-  overflow-y: auto;
+    position: fixed;
+    top: 4px;
+    left: 50%;
+    width: min(100% - 32px, 390px);
+    max-height: calc(100vh - 8px);
+    background-color: var(--bg-color);
+    border-radius: 28px 28px 0 0;
+    z-index: 20;
+    transform: translateX(-50%) translateY(-120%);
+    transition: transform 0.3s ease;
+    overflow-y: auto;
 }
 
 .burger-menu.open {
-  transform: translateX(-50%) translateY(0);
+    transform: translateX(-50%) translateY(0);
 }
 
 .menu-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 14px;
-  padding: 18px 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 18px 22px;
 }
 
 .menu-logo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
 }
 
 .menu-logo h1 {
-  font-size: clamp(1rem, 4.6vw, 1.25rem);
-  color: #2b2117;
-  line-height: 1;
-  font-family: Georgia, serif;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+    font-size: clamp(1rem, 4.6vw, 1.25rem);
+    color: var(--text-dark);
+    line-height: 1;
+    font-family: var(--font-sans);
+    font-weight: 800;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .menu-logo p {
-  margin-top: 4px;
-  font-size: clamp(0.55rem, 2.6vw, 0.7rem);
-  text-transform: uppercase;
-  letter-spacing: clamp(1.5px, 0.8vw, 3px);
-  color: #9c6b22;
+    margin-top: 4px;
+    font-size: clamp(0.55rem, 2.6vw, 0.7rem);
+    text-transform: uppercase;
+    letter-spacing: clamp(1.5px, 0.8vw, 3px);
+    color: var(--accent-gold);
+    font-weight: 700;
 }
 
 .close-button {
-  min-width: 36px;
-  font-size: 32px;
-  line-height: 1;
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: #2b2117;
+    min-width: 36px;
+    font-size: 32px;
+    line-height: 1;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-dark);
 }
 
 .header_line {
-  height: 1px;
-  width: 100%;
-  background-color: #e6dfc6;
+    height: 1px;
+    width: 100%;
+    background-color: var(--card-border);
 }
 
 .menu-links {
-  padding: 16px 24px 24px;
+    padding: 16px 24px 24px;
 }
 
 .menu-links li {
-  margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 .menu-links a {
-  display: block;
-  padding: 14px 16px;
-  border-radius: 8px;
-  color: #2b2117;
-  font-size: 16px;
+    display: block;
+    padding: 14px 16px;
+    border-radius: 8px;
+    color: var(--text-dark);
+    font-size: 16px;
+    font-family: var(--font-sans);
+    font-weight: 600;
 }
 
 .menu-links a.active {
-  background-color: #3b2a18;
-  color: #fff7e6;
+    background-color: var(--text-dark);
+    color: var(--bg-color);
 }
 
 .menu-links a:hover {
-  background-color: #3b2a18;
-  color: #fff7e6;
+    background-color: var(--text-dark);
+    color: var(--bg-color);
 }
 
 @media screen and (min-width: 768px) {
-  .header {
-    padding-top: 16px;
-  }
+    .header {
+        padding-top: 16px;
+    }
 
-  .site-header {
-    width: min(100% - 64px, 1100px);
-    min-height: 92px;
-    padding: 18px 32px;
-    border-radius: 30px;
-    border: 1px solid #e6dfc6;
-    box-shadow: 0 16px 40px rgba(59, 42, 24, 0.08);
-  }
+    .site-header {
+        width: min(100% - 64px, 1100px);
+        min-height: 92px;
+        padding: 18px 32px;
+        border-radius: 30px;
+        border: 1px solid var(--card-border);
+        box-shadow: 0 16px 40px rgba(34, 26, 17, 0.08);
+    }
 
-  .header-logo {
-    width: 42px;
-    height: 42px;
-    min-width: 42px;
-    font-size: 20px;
-  }
+    .header-logo {
+        width: 42px;
+        height: 42px;
+        min-width: 42px;
+        font-size: 20px;
+    }
 
-  .header-title h1 {
-    font-size: 1.45rem;
-  }
+    .header-title h1 {
+        font-size: 1.45rem;
+    }
 
-  .header-title p {
-    font-size: 0.72rem;
-    letter-spacing: 3.5px;
-  }
+    .header-title p {
+        font-size: 0.72rem;
+        letter-spacing: 3.5px;
+    }
 
-  .burger-button {
-    font-size: 30px;
-  }
+    .burger-button {
+        font-size: 30px;
+    }
 
-  .burger-menu {
-    top: 16px;
-    width: min(100% - 64px, 420px);
-    border-radius: 30px;
-  }
+    .burger-menu {
+        top: 16px;
+        width: min(100% - 64px, 420px);
+        border-radius: 30px;
+    }
 }
 
 @media screen and (min-width: 1024px) {
-  .site-header {
-    width: min(100% - 96px, 1180px);
-  }
+    .site-header {
+        width: min(100% - 96px, 1180px);
+    }
 
-  .burger-menu {
-    left: auto;
-    right: 48px;
-    width: 420px;
-    transform: translateY(-120%);
-  }
+    .burger-menu {
+        left: auto;
+        right: 48px;
+        width: 420px;
+        transform: translateY(-120%);
+    }
 
-  .burger-menu.open {
-    transform: translateY(0);
-  }
+    .burger-menu.open {
+        transform: translateY(0);
+    }
 }
 
 @media screen and (max-width: 360px) {
-  .site-header {
-    width: min(100% - 20px, 390px);
-    padding: 12px 16px;
-  }
+    .site-header {
+        width: min(100% - 20px, 390px);
+        padding: 12px 16px;
+    }
 
-  .burger-menu {
-    width: min(100% - 20px, 390px);
-  }
+    .burger-menu {
+        width: min(100% - 20px, 390px);
+    }
 
-  .header-logo {
-    width: 30px;
-    height: 30px;
-    min-width: 30px;
-    font-size: 15px;
-  }
+    .header-logo {
+        width: 30px;
+        height: 30px;
+        min-width: 30px;
+        font-size: 15px;
+    }
 
-  .header-title h1,
-  .menu-logo h1 {
-    font-size: 0.95rem;
-  }
+    .header-title h1,
+    .menu-logo h1 {
+        font-size: 0.95rem;
+    }
 
-  .header-title p,
-  .menu-logo p {
-    font-size: 0.52rem;
-    letter-spacing: 1.4px;
-  }
+    .header-title p,
+    .menu-logo p {
+        font-size: 0.52rem;
+        letter-spacing: 1.4px;
+    }
 }
