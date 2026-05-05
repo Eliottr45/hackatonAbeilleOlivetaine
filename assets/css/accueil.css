@@ -1,23 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap");
 
 :root {
-  /* Arrière-plans */
   --bg-color: #faf6ed;
   --card-bg: #ffffff;
 
-  /* Couleurs de texte (assombries pour un meilleur contraste) */
   --text-dark: #221a11;
   --text-body: #40362b;
 
-  /* Accents et métadonnées (ajustés pour dépasser 4.5:1) */
   --accent-gold: #9c6727;
   --meta-color: #69533c;
 
-  /* Bordure et boutons */
   --card-border: #d4c0a1;
   --btn-color: #435161;
 
-  /* Design & Typographie */
   --radius-card: 16px;
   --font-sans: "Inter", sans-serif;
   --font-serif: Georgia, serif;
@@ -161,12 +156,10 @@ tbody th {
 }
 
 .footer-basique {
-  position: absolute; /* Se positionne par rapport au body */
-  bottom: 0; /* Le pousse tout en bas du body */
-  left: 0; /* L'aligne à gauche */
-  width: 100%; /* Prend toute la largeur */
-
-  /* Tes styles d'origine */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
   text-align: center;
   padding: 20px 10px;
   background-color: #333;

@@ -41,7 +41,6 @@ body {
   background-color: var(--bg-color);
 }
 
-/* Protection haute spécificité : empêche tout CSS de page d'écraser les liens nav */
 .site-header .menu-links a {
   display: block;
   background-color: transparent;

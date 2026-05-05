@@ -26,7 +26,6 @@ body {
   padding-bottom: 80px;
 }
 
-/* ---- En-tête ---- */
 .title {
   margin-top: 20px;
   margin-left: 15px;
@@ -50,7 +49,6 @@ body {
   color: var(--text-dark);
 }
 
-/* ---- Boutons filtre ---- */
 .filtres {
   display: flex;
   flex-wrap: wrap;
@@ -77,14 +75,12 @@ body {
   color: var(--text-dark);
 }
 
-/* Le bouton actif est en fond sombre */
 .btn-filtre.actif {
   background-color: var(--text-dark);
   color: var(--card-bg);
   border-color: var(--text-dark);
 }
 
-/* ---- Grille galerie ---- */
 .galerie-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -111,7 +107,6 @@ body {
   transition: transform 0.4s ease;
 }
 
-/* Placeholder affiché quand il n'y a pas encore d'image */
 .galerie-item .placeholder {
   width: 100%;
   height: 100%;
@@ -132,12 +127,10 @@ body {
   transform: scale(1.04);
 }
 
-/* Les items masqués par le filtre disparaissent proprement */
 .galerie-item.masque {
   display: none;
 }
 
-/* ---- Footer ---- */
 footer {
   position: fixed;
   bottom: 0;
@@ -151,7 +144,6 @@ footer {
   font-size: 0.85rem;
 }
 
-/* ---- Tablette (min 768px) ---- */
 @media (min-width: 768px) {
   .title,
   .filtres {
@@ -173,7 +165,6 @@ footer {
   }
 }
 
-/* ---- Desktop (min 1024px) ---- */
 @media (min-width: 1024px) {
   .title {
     margin-top: 40px;
@@ -199,13 +190,11 @@ footer {
 
   .galerie-grid {
     grid-template-columns: repeat(4, 1fr);
-    /* minmax évite la déformation des images sur les grandes cartes */
     grid-auto-rows: minmax(200px, 260px);
     gap: 20px;
     padding: 40px;
   }
 
-  /* Sur desktop le ratio carré est désactivé, la hauteur vient des rows */
   .galerie-item {
     aspect-ratio: auto;
   }

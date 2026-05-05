@@ -1,10 +1,9 @@
 .footer-basique {
-    position: absolute; /* Se positionne par rapport au body */
-    bottom: 0; /* Le pousse tout en bas du body */
-    left: 0; /* L'aligne à gauche */
-    width: 100%; /* Prend toute la largeur */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
 
-    /* Tes styles d'origine */
     text-align: center;
     padding: 20px 10px;
     background-color: #333;

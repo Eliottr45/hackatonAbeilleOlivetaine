@@ -1,21 +1,16 @@
 :root {
-  /* Arrière-plans */
   --bg-color: #faf6ed;
   --card-bg: #ffffff;
 
-  /* Couleurs de texte (assombries pour un meilleur contraste) */
   --text-dark: #221a11;
   --text-body: #40362b;
 
-  /* Accents et métadonnées (ajustés pour dépasser 4.5:1) */
   --accent-gold: #9c6727;
   --meta-color: #69533c;
 
-  /* Bordure et boutons */
   --card-border: #d4c0a1;
   --btn-color: #435161;
 
-  /* Design & Typographie */
   --radius-card: 16px;
   --font-sans: "Inter", sans-serif;
   --font-serif: Georgia, serif;
