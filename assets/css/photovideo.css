@@ -3,9 +3,215 @@
   padding: 0;
   text-decoration: none;
   list-style: none;
+  box-sizing: border-box;
 }
 
+:root {
+  --font-display: "Georgia", Georgia, serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --bg-color: #faf6ed; /* Le fond beige de votre image */
+  --text-dark: #2a221b;
+  --text-body: #4a4036;
+  --accent-gold: #c48a45;
+  --meta-color: #9c836a;
+  --card-bg: #ffffff;
+  --card-border: #e8dece;
+  --btn-color: #728091;
+
+  --radius-card: 16px;
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Inter", sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  font-family: var(--font-sans);
+  color: var(--text-body);
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 60px; /* Laisse de la place pour le footer absolu */
+}
+
+/* =========================================
+   TITRES & FILTRES
+   ========================================= */
 .title {
-  margin-top: 40px;
-  margin-left: 30px;
+  margin-top: 20px;
+  margin-left: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.title p {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--accent-gold);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.title h3 {
+  font-size: 28px;
+  font-weight: 700;
+  font-family: var(--font-serif);
+  color: var(--text-dark);
+}
+
+.filtres {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  margin-top: 15px;
+  margin-left: 15px;
+}
+
+.btn-filtre {
+  padding: 8px 18px;
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  background-color: transparent;
+  color: var(--text-body);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-filtre:hover {
+  background-color: var(--card-border);
+  color: var(--text-dark);
+}
+
+.btn-filtre.actif {
+  background-color: var(--text-dark);
+  color: var(--card-bg);
+  border-color: var(--text-dark);
+}
+
+/* =========================================
+   NOUVELLE GRILLE "BENTO"
+   ========================================= */
+.galerie-grid {
+  display: grid;
+  /* Passage à 2 colonnes sur mobile pour réduire la taille des photos */
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px; /* Espacement légèrement réduit sur mobile */
+  padding: 20px 15px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.galerie-item {
+  position: relative;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  background-color: var(--card-bg);
+  aspect-ratio: 1 / 1; /* Carré parfait sur mobile */
+}
+
+.galerie-item img {
+  /* Remis à 100% pour remplir la carte proprement, la taille est gérée par les colonnes */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.galerie-item:hover img {
+  transform: scale(1.05); /* Effet de zoom élégant au survol */
+}
+
+.galerie-item.masque {
+  display: none;
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+.footer-basique {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  padding: 20px 10px;
+  background-color: #333;
+  color: #fff;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+}
+
+/* =========================================
+   RESPONSIVE (TABLETTES & DESKTOP)
+   ========================================= */
+
+/* --- TABLETTES (min 768px) --- */
+@media (min-width: 768px) {
+  .title,
+  .filtres {
+    margin-left: 30px;
+  }
+  .title {
+    margin-top: 30px;
+  }
+  .title h3 {
+    font-size: 42px;
+  }
+
+  .galerie-grid {
+    /* Passage à 3 colonnes sur tablette pour garder des proportions harmonieuses */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    padding: 30px;
+  }
+}
+
+/* --- ORDINATEURS (min 1024px) --- */
+@media (min-width: 1024px) {
+  .title {
+    margin-top: 40px;
+  }
+  .title p {
+    font-size: 16px;
+    letter-spacing: 2px;
+  }
+  .title h3 {
+    font-size: 56px;
+  }
+  .filtres {
+    gap: 20px;
+  }
+  .btn-filtre {
+    font-size: 18px;
+    padding: 12px 26px;
+  }
+
+  /* Grille complexe 4 colonnes pour desktop */
+  .galerie-grid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 280px; /* Hauteur fixe des lignes pour un alignement parfait */
+    gap: 20px;
+    padding: 40px;
+  }
+
+  .galerie-item {
+    aspect-ratio: auto; /* Désactive le ratio carré forcé pour permettre les étendues */
+  }
+
+  /* Classes utilitaires pour gérer la taille des éléments */
+  .galerie-item.tall {
+    grid-row: span 2; /* Prend 2 lignes de hauteur */
+  }
+
+  .galerie-item.wide {
+    grid-column: span 2; /* Prend 2 colonnes de largeur */
+  }
+
+  .galerie-item.large {
+    grid-column: span 2;
+    grid-row: span 2; /* Format géant */
+  }
 }
