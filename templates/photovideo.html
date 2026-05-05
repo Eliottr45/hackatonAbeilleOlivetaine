@@ -1,12 +1,13 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Adaptez les liens selon votre structure de projet -->
     <link rel="stylesheet" href="../assets/css/photovideo.css" />
     <link rel="stylesheet" href="{% static 'css/accueil.css' %}" />
 
-    <title>Photos&Vidéos</title>
+    <title>Photos & Vidéos</title>
   </head>
   <body>
     <div class="title">
@@ -20,42 +21,48 @@
       <button class="btn-filtre" data-filter="video">Vidéos</button>
     </div>
 
-    <div class="galerie-ruche">
-      <!-- Ligne 1 : 2 photos -->
-      <div class="ligne-hexa">
-        <div class="hexa">
-          <img src="https://picsum.photos/300/300?random=1.jpg" alt="1" />
-        </div>
-        <div class="hexa">
-          <img src="https://picsum.photos/300/300?random=2.jpg" alt="2" />
-        </div>
+    <!-- Nouvelle structure Grid façon Bento Box -->
+    <div class="galerie-grid">
+      <!-- Image haute (prend 2 lignes) -->
+      <div class="galerie-item tall">
+        <img
+          src="https://picsum.photos/600/800?random=1"
+          alt="Abeilles sur cadre"
+        />
       </div>
 
-      <!-- Ligne 2 : 3 https://picsum.photos/300/300?random=s -->
-      <div class="ligne-hexa">
-        <div class="hexa">
-          <img src="https://picsum.photos/300/300?random=3.jpg" alt="3" />
-        </div>
-        <div class="hexa">
-          <img src="https://picsum.photos/300/300?random=4.jpg" alt="4" />
-        </div>
-        <div class="hexa">
-          <img src="https://picsum.photos/300/300?random=5.jpg" alt="5" />
-        </div>
+      <!-- Images standards -->
+      <div class="galerie-item">
+        <img src="https://picsum.photos/400/400?random=2" alt="Cadre miel" />
+      </div>
+      <div class="galerie-item">
+        <img src="https://picsum.photos/400/400?random=3" alt="Apiculteur" />
       </div>
 
-      <!-- Ligne 3 : 2 https://picsum.photos/300/300?random=s -->
-      <div class="ligne-hexa">
-        <div class="hexa">
-          <img src="https://picsum.photos/300/300?random=6.jpg" alt="6" />
-        </div>
-        <div class="hexa">
-          <img src="https://picsum.photos/300/300?random=7.jpg" alt="7" />
-        </div>
+      <!-- Image large (prend 2 colonnes) -->
+      <div class="galerie-item wide">
+        <img
+          src="https://picsum.photos/800/400?random=4"
+          alt="Formation apiculture"
+        />
+      </div>
+
+      <!-- Images standards -->
+      <div class="galerie-item">
+        <img src="https://picsum.photos/400/400?random=5" alt="Abeilles zoom" />
+      </div>
+      <div class="galerie-item">
+        <img src="https://picsum.photos/400/400?random=6" alt="Cadre en main" />
+      </div>
+      <div class="galerie-item">
+        <img src="https://picsum.photos/400/400?random=7" alt="Ruches" />
+      </div>
+      <div class="galerie-item">
+        <img
+          src="https://picsum.photos/400/400?random=8"
+          alt="Fleur et abeille"
+        />
       </div>
     </div>
-    <footer class="footer-basique">
-      <p>&copy; 2026 Abeille Olivetaine. Tous droits réservés.</p>
-    </footer>
   </body>
 </html>

@@ -9,7 +9,7 @@
 :root {
   --font-display: "Georgia", Georgia, serif;
   --font-sans: "Inter", system-ui, sans-serif;
-  --bg-color: #faf6ed;
+  --bg-color: #faf6ed; /* Le fond beige de votre image */
   --text-dark: #2a221b;
   --text-body: #4a4036;
   --accent-gold: #c48a45;
@@ -27,8 +27,14 @@ body {
   background-color: var(--bg-color);
   font-family: var(--font-sans);
   color: var(--text-body);
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 60px; /* Laisse de la place pour le footer absolu */
 }
 
+/* =========================================
+   TITRES & FILTRES
+   ========================================= */
 .title {
   margin-top: 20px;
   margin-left: 15px;
@@ -84,152 +90,52 @@ body {
   border-color: var(--text-dark);
 }
 
-.galerie-ruche {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+/* =========================================
+   NOUVELLE GRILLE "BENTO"
+   ========================================= */
+.galerie-grid {
+  display: grid;
+  /* Passage à 2 colonnes sur mobile pour réduire la taille des photos */
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px; /* Espacement légèrement réduit sur mobile */
   padding: 20px 15px;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
-.ligne-hexa {
-  display: flex;
-  justify-content: center;
-  gap: 5px;
-  flex-wrap: wrap;
-}
-
-.ligne-hexa:not(:first-child) {
-  margin-top: -25px;
-}
-
-.hexa {
-  width: 100px;
-  height: 115px;
-  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-  background-color: var(--card-bg);
-  overflow: hidden;
+.galerie-item {
   position: relative;
-  transition: transform 0.3s ease;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  background-color: var(--card-bg);
+  aspect-ratio: 1 / 1; /* Carré parfait sur mobile */
 }
 
-.hexa img {
+.galerie-item img {
+  /* Remis à 100% pour remplir la carte proprement, la taille est gérée par les colonnes */
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform 0.4s ease;
 }
 
-.hexa:hover {
-  transform: scale(1.05);
-  z-index: 10;
+.galerie-item:hover img {
+  transform: scale(1.05); /* Effet de zoom élégant au survol */
 }
 
-.hexa.masque {
+.galerie-item.masque {
   display: none;
 }
 
-@media (min-width: 768px) {
-  .title,
-  .filtres {
-    margin-left: 30px;
-  }
-
-  .title {
-    margin-top: 30px;
-  }
-
-  .title p {
-    font-size: 14px;
-  }
-
-  .title h3 {
-    font-size: 42px;
-  }
-
-  .filtres {
-    gap: 15px;
-  }
-
-  .btn-filtre {
-    font-size: 16px;
-    padding: 10px 22px;
-  }
-
-  .galerie-ruche {
-    padding: 30px;
-  }
-
-  .ligne-hexa {
-    gap: 8px;
-  }
-
-  .ligne-hexa:not(:first-child) {
-    margin-top: -38px;
-  }
-
-  .hexa {
-    width: 150px;
-    height: 172px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .title {
-    margin-top: 40px;
-  }
-
-  .title p {
-    font-size: 16px;
-    letter-spacing: 2px;
-  }
-
-  .title h3 {
-    font-size: 56px;
-  }
-
-  .filtres {
-    gap: 20px;
-  }
-
-  .btn-filtre {
-    font-size: 18px;
-    padding: 12px 26px;
-  }
-
-  .galerie-ruche {
-    padding: 40px;
-  }
-
-  .ligne-hexa {
-    gap: 10px;
-  }
-
-  .ligne-hexa:not(:first-child) {
-    margin-top: -50px;
-  }
-
-  .hexa {
-    width: 200px;
-    height: 230px;
-  }
-body {
-  background-color: var(--bg-color);
-  font-family: var(--font-sans);
-  color: var(--text-body);
-  padding: 20px;
-  line-height: 1.5;
-  min-height: 100vh;
-  position: relative;
-  padding-bottom: 80px;
-}
-
+/* =========================================
+   FOOTER
+   ========================================= */
 .footer-basique {
-  position: absolute; /* Se positionne par rapport au body */
-  bottom: 0; /* Le pousse tout en bas du body */
-  left: 0; /* L'aligne à gauche */
-  width: 100%; /* Prend toute la largeur */
-
-  /* Tes styles d'origine */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
   text-align: center;
   padding: 20px 10px;
   background-color: #333;
@@ -238,6 +144,74 @@ body {
   font-size: 0.9rem;
 }
 
-.footer-basique p {
-  margin: 0;
+/* =========================================
+   RESPONSIVE (TABLETTES & DESKTOP)
+   ========================================= */
+
+/* --- TABLETTES (min 768px) --- */
+@media (min-width: 768px) {
+  .title,
+  .filtres {
+    margin-left: 30px;
+  }
+  .title {
+    margin-top: 30px;
+  }
+  .title h3 {
+    font-size: 42px;
+  }
+
+  .galerie-grid {
+    /* Passage à 3 colonnes sur tablette pour garder des proportions harmonieuses */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    padding: 30px;
+  }
+}
+
+/* --- ORDINATEURS (min 1024px) --- */
+@media (min-width: 1024px) {
+  .title {
+    margin-top: 40px;
+  }
+  .title p {
+    font-size: 16px;
+    letter-spacing: 2px;
+  }
+  .title h3 {
+    font-size: 56px;
+  }
+  .filtres {
+    gap: 20px;
+  }
+  .btn-filtre {
+    font-size: 18px;
+    padding: 12px 26px;
+  }
+
+  /* Grille complexe 4 colonnes pour desktop */
+  .galerie-grid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 280px; /* Hauteur fixe des lignes pour un alignement parfait */
+    gap: 20px;
+    padding: 40px;
+  }
+
+  .galerie-item {
+    aspect-ratio: auto; /* Désactive le ratio carré forcé pour permettre les étendues */
+  }
+
+  /* Classes utilitaires pour gérer la taille des éléments */
+  .galerie-item.tall {
+    grid-row: span 2; /* Prend 2 lignes de hauteur */
+  }
+
+  .galerie-item.wide {
+    grid-column: span 2; /* Prend 2 colonnes de largeur */
+  }
+
+  .galerie-item.large {
+    grid-column: span 2;
+    grid-row: span 2; /* Format géant */
+  }
 }
