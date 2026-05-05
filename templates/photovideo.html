@@ -3,66 +3,72 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Adaptez les liens selon votre structure de projet -->
-    <link rel="stylesheet" href="../assets/css/photovideo.css" />
-    <link rel="stylesheet" href="{% static 'css/accueil.css' %}" />
-
     <title>Photos & Vidéos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/photovideo.css" />
   </head>
   <body>
     <div class="title">
-      <p>GALERIE</p>
+      <p>Galerie</p>
       <h3>Photos & Vidéos</h3>
     </div>
 
     <div class="filtres">
       <button class="btn-filtre actif" data-filter="tous">Tous</button>
-      <button class="btn-filtre" data-filter="photo">Photos</button>
-      <button class="btn-filtre" data-filter="video">Vidéos</button>
+      <button class="btn-filtre" data-filter="album-2024">Album 2024</button>
+      <button class="btn-filtre" data-filter="album-2025">Album 2025</button>
     </div>
 
-    <!-- Nouvelle structure Grid façon Bento Box -->
     <div class="galerie-grid">
-      <!-- Image haute (prend 2 lignes) -->
-      <div class="galerie-item tall">
-        <img
-          src="https://picsum.photos/600/800?random=1"
-          alt="Abeilles sur cadre"
-        />
+      <!-- 1 tall à gauche + 2 normaux à droite qui remplissent les 2 lignes -->
+      <div class="galerie-item tall album-2024">
+        <img src="../assets/img/frelon_resultat.jpg" alt="Frelon" />
       </div>
 
-      <!-- Images standards -->
-      <div class="galerie-item">
-        <img src="https://picsum.photos/400/400?random=2" alt="Cadre miel" />
-      </div>
-      <div class="galerie-item">
-        <img src="https://picsum.photos/400/400?random=3" alt="Apiculteur" />
+      <div class="galerie-item album-2025">
+        <img src="../assets/img/nid_resultat.jpg" alt="Nid" />
       </div>
 
-      <!-- Image large (prend 2 colonnes) -->
-      <div class="galerie-item wide">
-        <img
-          src="https://picsum.photos/800/400?random=4"
-          alt="Formation apiculture"
-        />
+      <div class="galerie-item album-2025">
+        <img src="../assets/img/nid_resultat.jpg" alt="Nid" />
       </div>
 
-      <!-- Images standards -->
-      <div class="galerie-item">
-        <img src="https://picsum.photos/400/400?random=5" alt="Abeilles zoom" />
+      <!-- Ligne suivante : wide + 2 normaux -->
+      <div class="galerie-item wide album-2024">
+        <img src="../assets/img/frelon_resultat.jpg" alt="Frelon" />
       </div>
-      <div class="galerie-item">
-        <img src="https://picsum.photos/400/400?random=6" alt="Cadre en main" />
+
+      <div class="galerie-item album-2025">
+        <img src="../assets/img/nid_resultat.jpg" alt="Nid" />
       </div>
-      <div class="galerie-item">
-        <img src="https://picsum.photos/400/400?random=7" alt="Ruches" />
+
+      <div class="galerie-item album-2024">
+        <img src="../assets/img/frelon_resultat.jpg" alt="Frelon" />
       </div>
-      <div class="galerie-item">
-        <img
-          src="https://picsum.photos/400/400?random=8"
-          alt="Fleur et abeille"
-        />
+
+      <!-- Ligne suivante : 4 normaux classiques -->
+      <div class="galerie-item album-2025">
+        <img src="../assets/img/nid_resultat.jpg" alt="Nid" />
+      </div>
+
+      <div class="galerie-item album-2024">
+        <img src="../assets/img/frelon_resultat.jpg" alt="Frelon" />
+      </div>
+
+      <div class="galerie-item album-2025">
+        <img src="../assets/img/nid_resultat.jpg" alt="Nid" />
+      </div>
+
+      <div class="galerie-item album-2024">
+        <img src="../assets/img/frelon_resultat.jpg" alt="Frelon" />
       </div>
     </div>
+
+    <script src="../assets/script/photovideo.js"></script>
   </body>
 </html>
