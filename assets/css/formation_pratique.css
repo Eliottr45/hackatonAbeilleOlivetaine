@@ -12,11 +12,11 @@
   --meta-color: #69533c;
 
   /* Bordure et boutons */
-  --card-border: #d4c0a1; 
-  --btn-color: #435161; 
+  --card-border: #d4c0a1;
+  --btn-color: #435161;
 
   /* Design & Typographie */
-  --radius-card: 16px; 
+  --radius-card: 16px;
   --font-sans: "Inter", sans-serif;
   --font-serif: Georgia, serif;
 }
@@ -33,8 +33,7 @@ body {
   background-color: var(--bg-color);
   font-family: var(--font-sans);
   color: var(--text-body);
-  padding: 2rem;
-  line-height: 1.6; /* Améliore la lisibilité globale */
+  line-height: 1.6;
 }
 
 main.container {
@@ -42,7 +41,9 @@ main.container {
   flex-direction: column;
   max-width: 1200px;
   margin: 0 auto;
-  gap: 4rem; /* Plus d'espace pour un design aéré */
+  gap: 4rem;
+  margin-top: 30px;
+  padding: 0 2rem 2rem;
 }
 
 .hero-section {
@@ -102,7 +103,7 @@ main.container {
   width: 100%;
 }
 
-.box-list-training {  
+.box-list-training {
   background-color: var(--card-bg);
   border-radius: var(--radius-card);
   border: 1px solid var(--card-border);
@@ -153,7 +154,7 @@ main.container {
 
 /* Séparateur élégant sous le titre */
 .box-list-training h2::after {
-  content: '';
+  content: "";
   display: block;
   width: 50px;
   height: 3px;
@@ -180,7 +181,7 @@ main.container {
 
 /* Puces personnalisées dorées */
 .box-list-training li::before {
-  content: '•';
+  content: "•";
   color: var(--accent-gold);
   font-size: 1.5rem;
   line-height: 1rem;

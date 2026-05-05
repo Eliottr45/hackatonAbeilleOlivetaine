@@ -35,6 +35,35 @@ body {
 .header {
   width: 100%;
   padding: 4px 0 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--bg-color);
+}
+
+/* Protection haute spécificité : empêche tout CSS de page d'écraser les liens nav */
+.site-header .menu-links a {
+  display: block;
+  background-color: transparent;
+  color: var(--text-body);
+  padding: 14px 16px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  width: auto;
+  margin: 0;
+  transform: none;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.site-header .menu-links a.active,
+.site-header .menu-links a:hover {
+  background-color: var(--text-dark);
+  color: var(--bg-color);
+  transform: none;
 }
 
 .site-header {
@@ -252,14 +281,63 @@ body {
     letter-spacing: 3.5px;
   }
 
+  /* Burger caché sur desktop */
   .burger-button {
-    font-size: 30px;
+    display: none;
   }
 
+  /* Overlay inutile sur desktop */
+  .menu-overlay {
+    display: none !important;
+  }
+
+  /* La nav quitte son mode panneau fixe et devient inline */
   .burger-menu {
-    top: 16px;
-    width: min(100% - 64px, 420px);
-    border-radius: 30px;
+    position: static;
+    transform: none !important;
+    width: auto;
+    max-height: none;
+    background: none;
+    border-radius: 0;
+    box-shadow: none;
+    overflow: visible;
+    display: flex;
+    align-items: center;
+    z-index: auto;
+    transition: none;
+  }
+
+  /* On masque les éléments propres au panneau mobile */
+  .menu-top,
+  .header_line {
+    display: none;
+  }
+
+  /* Liens horizontaux */
+  .menu-links {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+  }
+
+  .menu-links li {
+    margin-bottom: 0;
+  }
+
+  .site-header .menu-links a {
+    padding: 8px 13px;
+    border-radius: 8px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--text-body);
+    white-space: nowrap;
+  }
+
+  .site-header .menu-links a.active,
+  .site-header .menu-links a:hover {
+    background-color: var(--text-dark);
+    color: var(--bg-color);
   }
 }
 
@@ -268,15 +346,9 @@ body {
     width: min(100% - 96px, 1180px);
   }
 
-  .burger-menu {
-    left: auto;
-    right: 48px;
-    width: 420px;
-    transform: translateY(-120%);
-  }
-
-  .burger-menu.open {
-    transform: translateY(0);
+  .site-header .menu-links a {
+    font-size: 0.92rem;
+    padding: 9px 15px;
   }
 }
 

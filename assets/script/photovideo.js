@@ -1,25 +1,30 @@
-const prout = "test";
-// export function initMessageFilter() {
-//   const radios = document.querySelectorAll('.filter-radio');
+// On attend que le DOM soit chargé avant de toucher quoi que ce soit
+document.addEventListener("DOMContentLoaded", () => {
+  const boutonsFiltres = document.querySelectorAll(".btn-filtre");
+  const itemsGalerie = document.querySelectorAll(".galerie-item");
 
-//   radios.forEach(radio => {
-//     radio.addEventListener('change', () => {
-//       filterBy(radio.value);
-//       console.log('Filtre activé:', radio.value);
-//     });
-//   });
-// }
+  boutonsFiltres.forEach((bouton) => {
+    bouton.addEventListener("click", () => {
+      // On déplace la classe "actif" sur le bouton cliqué
+      boutonsFiltres.forEach((b) => b.classList.remove("actif"));
+      bouton.classList.add("actif");
 
-// function filterBy(target) {
-//   const messages = document.querySelectorAll('.message-card');
+      const filtre = bouton.dataset.filter;
 
-//   messages.forEach(message => {
-//     const category = message.getAttribute('data-category-id');
+      itemsGalerie.forEach((item) => {
+        // "tous" — tout le monde revient à l'écran
+        if (filtre === "tous") {
+          item.classList.remove("masque");
+          return;
+        }
 
-//     if (target === 'all' || category === target) {
-//       message.style.display = 'flex';
-//     } else {
-//       message.style.display = 'none';
-//     }
-//   });
-// }
+        // Sinon on cache les items qui n'ont pas la classe de l'album sélectionné
+        if (item.classList.contains(filtre)) {
+          item.classList.remove("masque");
+        } else {
+          item.classList.add("masque");
+        }
+      });
+    });
+  });
+});
