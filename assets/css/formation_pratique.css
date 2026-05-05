@@ -28,7 +28,10 @@ body {
   background-color: var(--bg-color);
   font-family: var(--font-sans);
   color: var(--text-body);
-  line-height: 1.6;
+  line-height: 1.5;
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 80px;
 }
 
 main.container {
