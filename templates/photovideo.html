@@ -24,8 +24,17 @@
       <button class="btn-filtre" data-filter="album-2025">Album 2025</button>
     </div>
 
+    <!--
+      Composition desktop (4 colonnes, rows de ~230px) :
+
+      [ tall ][ normal ][ normal ][ normal ]
+      [ tall ][ wide          ][ normal ]
+      [ normal ][ normal ][ normal ][ normal ]
+
+      Ça donne une grille sans trou et visuellement équilibrée.
+    -->
     <div class="galerie-grid">
-      <!-- 1 tall à gauche + 2 normaux à droite qui remplissent les 2 lignes -->
+      <!-- Rangée 1 + 2 : tall à gauche occupe 2 lignes, 3 normaux à sa droite sur ligne 1, wide + normal sur ligne 2 -->
       <div class="galerie-item tall album-2024">
         <img src="../assets/img/frelon_resultat.jpg" alt="Frelon" />
       </div>
@@ -34,11 +43,15 @@
         <img src="../assets/img/nid_resultat.jpg" alt="Nid" />
       </div>
 
+      <div class="galerie-item album-2024">
+        <img src="../assets/img/frelon_resultat.jpg" alt="Frelon" />
+      </div>
+
       <div class="galerie-item album-2025">
         <img src="../assets/img/nid_resultat.jpg" alt="Nid" />
       </div>
 
-      <!-- Ligne suivante : wide + 2 normaux -->
+      <!-- Le wide prend 2 colonnes et se place juste sous les 2 normaux de droite -->
       <div class="galerie-item wide album-2024">
         <img src="../assets/img/frelon_resultat.jpg" alt="Frelon" />
       </div>
@@ -47,15 +60,7 @@
         <img src="../assets/img/nid_resultat.jpg" alt="Nid" />
       </div>
 
-      <div class="galerie-item album-2024">
-        <img src="../assets/img/frelon_resultat.jpg" alt="Frelon" />
-      </div>
-
-      <!-- Ligne suivante : 4 normaux classiques -->
-      <div class="galerie-item album-2025">
-        <img src="../assets/img/nid_resultat.jpg" alt="Nid" />
-      </div>
-
+      <!-- Rangée 3 : 4 normaux, la grille se ferme proprement -->
       <div class="galerie-item album-2024">
         <img src="../assets/img/frelon_resultat.jpg" alt="Frelon" />
       </div>
@@ -66,6 +71,10 @@
 
       <div class="galerie-item album-2024">
         <img src="../assets/img/frelon_resultat.jpg" alt="Frelon" />
+      </div>
+
+      <div class="galerie-item album-2025">
+        <img src="../assets/img/nid_resultat.jpg" alt="Nid" />
       </div>
     </div>
 
