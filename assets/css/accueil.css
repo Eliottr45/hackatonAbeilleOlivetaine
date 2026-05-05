@@ -215,3 +215,44 @@ tbody th {
 .hexa.masque {
   display: none;
 }
+
+/* Rendu Desktop et Tablette pour la galerie hexagonale */
+@media screen and (min-width: 768px) {
+  .galerie-ruche {
+    padding: 40px 20px;
+  }
+
+  .ligne-hexa {
+    gap: 10px;
+    flex-wrap: nowrap; /* Empêche le passage à la ligne non désiré */
+  }
+
+  /* La marge négative correspond à environ 25% de la hauteur de l'hexagone */
+  .ligne-hexa:not(:first-child) {
+    margin-top: -50px;
+  }
+
+  .hexa {
+    width: 180px;
+    height: 208px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .galerie-ruche {
+    padding: 60px 20px;
+  }
+
+  .ligne-hexa {
+    gap: 15px;
+  }
+
+  .ligne-hexa:not(:first-child) {
+    margin-top: -75px;
+  }
+
+  .hexa {
+    width: 260px;
+    height: 300px;
+  }
+}
